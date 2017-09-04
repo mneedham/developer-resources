@@ -13,3 +13,7 @@ jobs:
 
       # Render all the things
       - run: "./render.rb all"
+
+general:
+  artifacts:
+    - "deploy" 
