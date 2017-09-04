@@ -26,6 +26,3 @@ workflows:
   publish-to-website:
     jobs:
       - publish
-        filters:
-            branches:
-              only: publish
