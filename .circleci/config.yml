@@ -32,3 +32,18 @@ workflows:
         filters:
           branches:
             only: publish
+
+workflows:
+  version: 2
+  build-gh-pages:
+    jobs:
+      - build
+        filters:
+            branches:
+              only: gh-pages
+  publish-to-website:
+    jobs:
+      - publish
+        filters:
+            branches:
+              only: publish
