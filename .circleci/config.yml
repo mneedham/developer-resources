@@ -14,6 +14,6 @@ jobs:
             echo "my artifact file" > ~/circleci-gh-pages/foo
       - store_artifacts:
           path: ~/circleci-gh-pages/
-     - store_artifacts:
-        path: ~/circleci-gh-pages/foo
-        destination: artifact-file
+      - store_artifacts:
+          path: ~/circleci-gh-pages/foo
+          destination: artifact-file
