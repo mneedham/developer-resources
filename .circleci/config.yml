@@ -23,9 +23,6 @@ workflows:
   build-gh-pages:
     jobs:
       - build
-        filters:
-            branches:
-              only: gh-pages
   publish-to-website:
     jobs:
       - publish
