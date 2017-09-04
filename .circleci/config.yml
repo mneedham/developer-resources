@@ -23,3 +23,11 @@ workflows:
   build-gh-pages:
     jobs:
       - build
+          filters:
+            branches:
+              only: gh-pages
+
+      - publish
+          filters:
+            branches:
+              only: publish
