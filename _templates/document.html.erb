@@ -9,7 +9,7 @@ active[(@document.attr "section-link", "get-started")]=:active;
 <%= File.new("_templates/head_partial.erb").read %>
 <body>
 <%= File.new("_templates/top_bar_partial.erb").read %>
-<div class="marquee blue">
+<div class="marquee-neo">
     <div class="row text-center">
         <div class="medium-10 small-centered columns">
             <h1 class="entry-title"><%= (doctitle(:sanitize => true) || (attr 'untitled-label')) %></h1>
