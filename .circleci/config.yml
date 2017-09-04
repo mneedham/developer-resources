@@ -1,18 +1,12 @@
 version: 2
 jobs:
   build:
-    working_directory: /tmp
+    working_directory: ~/circleci-gh-pages
     docker:
       - image: circleci/ruby:2.4.1-node
-
     steps:
       - checkout
-
-      # Bundle install dependencies
       - run: bundle install
-
-      # Render all the things
       - run: "./render.rb all"
-
       - store_artifacts:
-          path: /tmp/data-modeling
+          path: ~/circleci-gh-pages/
