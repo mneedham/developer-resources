@@ -17,6 +17,8 @@ jobs:
           - gh-pages
   publish:
     working_directory: ~/circleci-publish
+    docker:
+      - image: circleci/ruby:2.4.1-node
     steps:
       - run: echo "mark" > ~/circleci-publish/mark.txt
     filters:
