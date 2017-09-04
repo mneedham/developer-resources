@@ -9,4 +9,4 @@ jobs:
       - run: bundle install
       - run: "./render.rb all"
       - run: sudo apt-get update && sudo apt-get install -y awscli
-      - run: aws --region eu-west-1 s3 sync ~/circleci-gh-pages/deploy/ s3://developer-pages.neo4j.com
+      - run: aws --region eu-west-1 s3 sync ~/circleci-gh-pages/deploy/ s3://developer-pages.neo4j.com/developer/
