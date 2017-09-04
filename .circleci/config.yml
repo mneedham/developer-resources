@@ -8,12 +8,4 @@ jobs:
       - checkout
       - run: bundle install
       - run: "./render.rb all"
-      - run:
-          name: Creating Dummy Artifacts
-          command: |
-            echo "my artifact file" > ~/circleci-gh-pages/foo
-      - store_artifacts:
-          path: ~/circleci-gh-pages/
-      - store_artifacts:
-          path: ~/circleci-gh-pages/foo
-          destination: artifact-file
+      - run: aws s3 sync ~/circleci-gh-pages/data-modeling s3://developer-pages.neo4j.com
