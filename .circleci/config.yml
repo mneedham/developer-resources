@@ -14,6 +14,5 @@ jobs:
       # Render all the things
       - run: "./render.rb all"
 
-general:
-  artifacts:
-    - "data-modeling" 
+      - store_artifacts:
+          path: data-modeling
