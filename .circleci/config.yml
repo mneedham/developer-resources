@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/circleci-gh-pages
+    working_directory: /tmp
     docker:
       - image: circleci/ruby:2.4.1-node
 
@@ -15,4 +15,4 @@ jobs:
       - run: "./render.rb all"
 
       - store_artifacts:
-          path: ~/circleci-gh-pages/data-modeling
+          path: /tmp/data-modeling
