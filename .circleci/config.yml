@@ -22,12 +22,12 @@ workflows:
   version: 2
   build-gh-pages:
     jobs:
-      - build
+      - build:
           filters:
             branches:
               only: gh-pages
 
-      - publish
+      - publish:
           filters:
             branches:
               only: publish
