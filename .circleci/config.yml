@@ -16,4 +16,4 @@ jobs:
 
 general:
   artifacts:
-    - "deploy" 
+    - "data-modeling" 
