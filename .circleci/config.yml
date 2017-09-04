@@ -23,6 +23,3 @@ workflows:
   build-gh-pages:
     jobs:
       - build
-  publish-to-website:
-    jobs:
-      - publish
