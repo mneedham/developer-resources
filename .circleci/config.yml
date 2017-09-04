@@ -11,17 +11,24 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y awscli
       - run: cp -r ~/circleci-gh-pages/assets/ ~/circleci-gh-pages/deploy
       - run: aws --region eu-west-1 s3 sync ~/circleci-gh-pages/deploy/ s3://developer-pages.neo4j.com/developer/ --delete
-    filters:
-      branches:
-        only:
-          - gh-pages
   publish:
     working_directory: ~/circleci-publish
     docker:
       - image: circleci/ruby:2.4.1-node
     steps:
       - run: echo "mark" > ~/circleci-publish/mark.txt
-    filters:
-      branches:
-        only:
-          - publish
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      build:
+        filters:
+          branches:
+            only: gh-pages
+  publish:
+    jobs:
+      publish:
+        filters:
+          branches:
+            only: publish
