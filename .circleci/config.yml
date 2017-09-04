@@ -8,4 +8,5 @@ jobs:
       - checkout
       - run: bundle install
       - run: "./render.rb all"
-      - run: aws s3 sync ~/circleci-gh-pages/data-modeling s3://developer-pages.neo4j.com
+      - run: apt-get update && apt-get install -y awscli
+      - run: aws s3 sync ~/circleci-gh-pages/deploy/ s3://developer-pages.neo4j.com
